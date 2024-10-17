@@ -1,0 +1,19 @@
+num = list(str(num))
+        rs = ['0'] * len(num)
+        max_digit = '0'
+        mp = {}
+
+        for i in range(len(num) - 1, -1, -1):
+            if num[i] > max_digit:
+                max_digit = num[i]
+                mp[max_digit] = i
+            rs[i] = max_digit
+
+        for i in range(len(num)):
+            if rs[i] > num[i]:
+                temp = num[i]
+                num[i] = rs[i]
+                num[mp[rs[i]]] = temp
+                break
+
+        return int(''.join(num))
