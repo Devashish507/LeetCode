@@ -1,0 +1,10 @@
+def Search(Root,val):
+            if Root is None:
+                return 
+            if Root.val == val:
+                return Root
+            elif Root.val<val:
+                return Search(Root.right,val)
+            else:
+                return Search(Root.left,val)
+        return Search(root,val)
