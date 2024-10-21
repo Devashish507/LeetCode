@@ -1,0 +1,10 @@
+res=[]
+def PostOrder(Root):
+    if Root is None:
+        return 
+    PostOrder(Root.left)
+    PostOrder(Root.right)
+    res.append(Root.val)
+   
+PostOrder(root)
+return res
